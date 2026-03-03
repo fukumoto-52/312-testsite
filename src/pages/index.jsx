@@ -37,7 +37,7 @@ const Page = ({}) => {
 
       <section className={style.instaSec}>
         <h2>INSRAGRAM</h2>
-
+        <div id="instafeed"></div>
       </section>
       <ButtomContact />
     </Layout>
