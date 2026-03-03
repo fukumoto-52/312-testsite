@@ -1,0 +1,45 @@
+
+.btnSvg {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  height: 54px;
+  padding: 0;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 54px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnSvg svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+}
+
+.btnSvg svg rect {
+  transition: all 900ms ease;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 240px, 16px;
+  stroke-dashoffset: 70px;
+}
+
+.btnSvg:hover svg rect {
+  stroke-dashoffset: 284px;
+}
+
+.btnSvg span {
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+  font-family: serif;
+  font-size: 20px;
+}

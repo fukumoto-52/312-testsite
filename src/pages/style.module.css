@@ -1,0 +1,7 @@
+.topSec {
+  margin: 10px 20px 80px;
+  & .top_visual {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+}

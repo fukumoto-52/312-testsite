@@ -1,0 +1,174 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 60px 0 16px;
+  color:#fff;
+  position: relative;
+  background-color: var(--color-sub);
+  background-size: cover;
+  background-blend-mode: lighten;
+
+  & .footerTop {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    & .footer_logo {
+      & img {
+        width: 200px;
+        margin-bottom: 40px;
+      }
+    }
+
+    & .nav{
+      & .nav_list{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        
+        & .nav_item{
+          text-align: left;
+          
+          & a{
+            color:#fff;
+            font-family: "游明朝" , "Yu Mincho", serif;
+            font-weight: 600;
+
+            &:hover{
+              color: var(--color-main);
+              opacity: 0.9;
+            }
+          }
+        }
+
+        & .headercontact{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color:#fff;
+        }
+      }
+    }
+  }
+  @media(max-width:897px){
+    & .footerTop {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.companySec{
+  margin: 40px 0;
+
+  & .accessBoxOuter{
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    & .accessBox{
+      background-color: #ffffff61;
+      backdrop-filter: blur(5px);
+      padding: 20px 40px;
+
+      & .textBox{
+        & .titleFlex{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 60px;
+
+          & h4{
+            width: 100%;
+            color: #fff;
+            text-align: left;
+            background-color: var(--color-sub);
+            padding: 5px 20px;
+            border-left: 5px solid var(--color-main);
+            box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+          }
+
+          & a{
+            & img{
+              width: 35px;
+              height: 35px;
+              object-fit: contain;
+            }
+            &:hover{
+              opacity: 0.6;
+
+            }
+          }
+        }
+        & .accessTextBox{
+          margin: 10px 10px 0px;
+          color: var(--color-light);
+          font-weight: 300;
+
+          & dl{
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--color-main);
+
+            & dt{
+              text-align: center;
+              min-width: 100px;
+            }
+
+            & dd{
+              text-align: left;
+
+              & a{
+                color: var(--color-light);
+                font-weight: 600;
+
+                &:hover{
+                  color: var(--color-main);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media(max-width:840px){
+    & .accessBoxOuter{
+      flex-direction: column;
+
+      & .accessBox{
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.privacy_policy_link {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 2.5;
+  letter-spacing: 0.15em;
+  color:#fff;
+
+  &:hover {
+    @media (min-width: 1081px) {
+      text-decoration: underline;
+    }
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  line-height: 2.5;
+  letter-spacing: 0.15em;
+
+  @media (min-width: 1081px) {
+    font-size: 14px;
+  }
+}

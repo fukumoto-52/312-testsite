@@ -1,0 +1,61 @@
+.hamburger {
+  --size: 36px;         /* ボタンのサイズ（必要なら調整） */
+  --bar-width: 24px;    /* 線の横幅 */
+  --bar-height: 2px;    /* 線の太さ */
+  --gap: 8px;           /* 上下の間隔 */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 共通バー */
+.bar {
+  display: block;
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: #111; /* 線の色 */
+  border-radius: 2px;
+  position: relative;
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1), opacity 200ms ease;
+  transform-origin: center;
+}
+
+/* 2本にするため :before/:after を使って上下に配置 */
+.bar:first-child {
+  transform: translateY(calc(-1 * var(--gap) / 2));
+}
+.bar:last-child {
+  transform: translateY(calc(var(--gap) / 2));
+}
+
+/* 開いた状態（Xにする） */
+.open .bar:first-child {
+  transform: translateY(0) rotate(45deg);
+}
+.open .bar:last-child {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* ホバー/フォーカス時の微調整（任意） */
+.hamburger:hover .bar,
+.hamburger:focus .bar {
+  /* subtle scale on hover */
+  transform-origin: center;
+}
+
+/* フォーカス用の見た目（アクセシビリティ） */
+.hamburger:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+  border-radius: 6px;
+}
+
+/* カラーバリエーション用のユーティリティ（必要なら上書き） */

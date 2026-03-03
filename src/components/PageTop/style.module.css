@@ -1,0 +1,38 @@
+.page_top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 9999;
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateY(50px); /* ボタンが下から上がってくるように */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーションの設定 */
+
+  &.show {
+    opacity: 1; /* 表示時の透明度 */
+    transform: translateY(0); /* 元の位置に戻す */
+  }
+
+  /* @media (max-width: 836px) {
+    display: none;
+  } */
+}
+
+.scrollBtn {
+  width: 75px;
+  height: 75px;
+  background-color: var(--color-dark);
+  transition: 0.3s;
+
+  & img {
+    width: 40px;
+    height: auto;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  /* @media (max-width: 836px) {
+    display: none;
+  } */
+}

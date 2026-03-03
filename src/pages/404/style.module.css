@@ -1,0 +1,39 @@
+.notfound_container {
+  margin-top: 120px;
+}
+
+.notfound_container h1 {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: var(--font-weight-medium);
+  line-height: 47px;
+  letter-spacing: 0.05em;
+
+  @media (min-width: 641px) {
+    font-size: 50px;
+    line-height: 59px;
+  }
+}
+
+.notfound_container p {
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  line-height: 30px;
+  letter-spacing: 0.15em;
+}
+
+.notfound_container .top_page_link {
+  display: block;
+  width: 250px;
+  padding: 9px 0;
+  margin: 46px auto 120px;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  line-height: 30px;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--color-dark);
+
+  @media (min-width: 641px) {
+    width: 300px;
+  }
+}
