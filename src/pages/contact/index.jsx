@@ -13,8 +13,16 @@ import kv from "../../images/top/contact.jpg"
 const Page = () => {
   const phoneNumber = "0123456789" 
 
-  const contactList = ["商品について", "サービスについて", "その他"] 
-  const contactItem = ["お名前", "メールアドレス", "会社名"] 
+  const contactList = [
+    "商品について", 
+    "サービスについて", 
+    "その他"
+  ] 
+  const contactItem = [
+    "お名前",
+    "メールアドレス",
+    "会社名"
+  ] 
 
   const {
     register,

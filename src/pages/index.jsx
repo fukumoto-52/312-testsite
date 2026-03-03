@@ -24,11 +24,20 @@ const Page = ({}) => {
         </div>
       </div>
 
+      <section className={style.sponsorSec}>
+        <h2>SPONSOR</h2>
+      </section>
+
       <section className={style.SlideSec}>
         <div className="content">
           <h2>Slideshow</h2>
           <Slideshow images={images} />
         </div>
+      </section>
+
+      <section className={style.instaSec}>
+        <h2>INSRAGRAM</h2>
+
       </section>
       <ButtomContact />
     </Layout>
