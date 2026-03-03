@@ -69,6 +69,9 @@ const Component = () => {
                 公式サイト
               </a>
             </li>
+            <li className={style.sp_nav_item}>
+              <Link to="/contact">お問い合わせ</Link>
+            </li>
           </ul>
         </nav>
       </div>

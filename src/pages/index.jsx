@@ -25,7 +25,7 @@ const Page = ({}) => {
       </div>
 
       <section className={style.SlideSec}>
-        <div className={"content"}>
+        <div className="content">
           <h2>Slideshow</h2>
           <Slideshow images={images} />
         </div>

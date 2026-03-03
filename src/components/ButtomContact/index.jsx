@@ -19,7 +19,7 @@ const Component = () => {
           </div>
         </Link>
 
-        <Link className={style.button} to="/">
+        <Link className={style.button} to="/contact">
           お問い合わせはこちら
         </Link>
 
