@@ -1,8 +1,8 @@
 // src/utils/instafeed.js
 export const loadInstagramFeed = async (selector) => {
-  const business_id = "735852159607490";
-  const access_token = "EAAcSWoZB9eFwBQ0kKUGa0G6d1bl1N51k1lzn9zeJyZCIJBObbK0PZCcQS9tg1yU7wZBsXS3UNVZCpmeSTxmDBZAR0679JzebosM2iDoZA2NqPwxYVBSlb2UsRQeEVZBeOTW5yVpfuhxAYgVf7KPjkGd2dIAkFZABWDdg7Vgdyp4HX6bhY2VKztwI14YDHaHRh3DCZCaZBbNmq8d6YOtUZCcacYDZA10cfhDvu2PDxYHbZAFM4ZD";
-  const limit = 12;
+  const business_id = "businessID";
+  const access_token = "アクセストークン";
+  const limit = 3;
   const fields =
     "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,children{media_type,media_url,thumbnail_url,permalink}";
 

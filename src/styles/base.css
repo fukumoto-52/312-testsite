@@ -69,6 +69,7 @@ figure {
   border: 0;
   outline: 0;
   font-size: 1em;
+  box-sizing: border-box;
 }
 
 html {
@@ -163,12 +164,15 @@ video {
   padding: 0 16px;
   box-sizing: border-box;
   @media (max-width: 1000px) {
-    padding: 0;
+    padding: 0 10px;
   }
 }
 
 section {
-  padding: 0;
+  margin: 80px 0;
+  @media(max-width:896px){
+     margin: 60px 0;
+  }
 }
 p {
   font-size: 18px;

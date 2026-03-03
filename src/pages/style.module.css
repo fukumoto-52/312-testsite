@@ -1,7 +1,58 @@
 .topSec {
-  margin: 10px 20px 80px;
+  position: relative;
   & .top_visual {
     max-width: 1700px;
     margin: 0 auto;
+  }
+  .toplogo {
+    position: absolute;
+    max-width: 300px;
+    width: 100%;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    img {
+      max-width: 300px;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+  }
+}
+.sponsorSec {
+  h2 {
+    font-size: clamp(4rem , 10rem , 8rem);
+    line-height: 1;
+    text-stroke: 2px #fff;
+    paint-order: stroke;
+    -webkit-text-stroke: 2px #fff;
+    color: var(--color-dark);
+  }
+  .sponsorFlex{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+
+    li{
+      transform: skewX(-10deg);
+      background-color: #fff;
+      width: calc(100% / 4);
+      max-width: 350px;
+      
+      img{
+        padding: 20px 40px;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+      h4{
+        text-align: center;
+        background-color: var(--color-main);
+      }
+      &:nth-child(2n){
+        h4{
+          background-color: var(--color-sub);
+        }
+      }
+    }
   }
 }
