@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
 import Layout from "/src/components/Layout"
 import * as style from "./style.module.css"
+import { loadInstagramFeed } from "../utils/instafeed"
+
 import "../styles/base.css"
 import TopVisual from "/src/components/TopVisual"
 import FadeIn from "/src/components/FadeIn"
@@ -10,12 +12,10 @@ import ButtomContact from "/src/components/ButtomContact"
 import sample from "/src/images/top/sample.jpg"
 
 const Page = ({}) => {
-    const images = [
-      sample,
-      sample,
-      sample,
-      sample,
-    ];
+  const images = [sample, sample, sample, sample]
+  useEffect(() => {
+    loadInstagramFeed("#instafeed")
+  }, [])
   return (
     <Layout>
       <div className={style.topSec}>
@@ -45,9 +45,4 @@ const Page = ({}) => {
 }
 
 export default Page
-export const Head = () => (
-  <Seo
-    title="TOP"
-    description="TOPページです"
-  />
-)
+export const Head = () => <Seo title="TOP" description="TOPページです" />
