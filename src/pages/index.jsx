@@ -62,7 +62,7 @@ const Page = ({}) => {
           <ul className={style.sponsorFlex}>
             {sponsor.map((item, index) => {
               return (
-                <FadeIn key={index}>
+                <FadeIn custom={{ delay:0.05*index , skewX: -10 }} >
                   <a href={item.link}>
                     <li>
                       <img src={item.logo} alt={item.title} />
