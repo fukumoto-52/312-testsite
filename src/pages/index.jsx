@@ -56,7 +56,7 @@ const Page = ({}) => {
       <div className={style.topSec}>
         <div className={style.top_visual}>
           {/* <img src={sample} className={style.kv} /> */}
-          <video controls>
+          <video loop muted autoplay >
             <source src={kv} type="video/mp4" />
             お使いのブラウザはvideoタグに対応していません。
           </video>
