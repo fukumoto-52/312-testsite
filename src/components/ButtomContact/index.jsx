@@ -1,28 +1,28 @@
 import { Link } from "gatsby"
 import React from "react"
 import * as style from "./style.module.css"
-
+import AnimationText from "/src/components/AnimationText"
+import MainButton from "/src/components/MainButton"
 
 const Component = () => {
-
   return (
-    <div className={style.container}>
-      <h3 className={style.heading}>CONTACT</h3>
-      <p>
-        <span>ご不明点がございましたら、</span>
-        <span>お気軽にお問い合わせください。</span>
-      </p>
-      <div className={style.contentflex}>
-        <Link href={`tel:+81 000`}>
-          <div className={style.tel}>
-              Tel:00
-          </div>
-        </Link>
-
-        <Link className={style.button} to="/contact">
-          お問い合わせはこちら
-        </Link>
-
+    <div className={style.topcontact}>
+      <div className={style.topcontact_outer}>
+        <span className={style.heading}>
+          <AnimationText text="ENTRY" />
+        </span>
+        <h3>エントリーはこちらから</h3>
+        <p>
+          ここに文字が入りますここに文字が入りますここに文字が入ります
+          <br />
+          ここに文字が入りますここに文字が入ります
+        </p>
+        <div className={style.contentflex}>
+          <Link href={`tel:+81 000`}>
+            <div className={style.tel}>Tel:00</div>
+          </Link>
+          <MainButton link="/contact" text="エントリー" />
+        </div>
       </div>
     </div>
   )

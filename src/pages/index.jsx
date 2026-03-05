@@ -9,12 +9,17 @@ import FadeIn from "/src/components/FadeIn"
 import Seo from "/src/components/Seo"
 import Slideshow from "/src/components/Slideshow"
 import ButtomContact from "/src/components/ButtomContact"
+import AnimationText from "/src/components/AnimationText"
 
 import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
 
 import sponsor01 from "/src/images/icon/logo.png"
+import movie01 from "/src/images/movie/movie01.mp4"
+import movie02 from "/src/images/movie/movie02.mp4"
+import movie03 from "/src/images/movie/movie03.mp4"
 
+import japan from "/src/images/other/japan.png"
 const Page = ({}) => {
   const images = [sample, sample, sample, sample]
 
@@ -40,6 +45,7 @@ const Page = ({}) => {
       link: "/",
     },
   ]
+  const movies = [movie01, movie02, movie03]
 
   useEffect(() => {
     loadInstagramFeed("#instafeed")
@@ -56,25 +62,27 @@ const Page = ({}) => {
         </div>
       </div>
 
-      <div className="content">
-        <section className={style.sponsorSec}>
-          <h2>SPONSOR</h2>
+      <section className={style.sponsorSec}>
+        <div className="content">
+          <h2>
+            <AnimationText text="SPONSOR" />
+          </h2>
           <ul className={style.sponsorFlex}>
             {sponsor.map((item, index) => {
               return (
-                <FadeIn custom={{ delay:0.05*index , skewX: -10 }} >
-                  <a href={item.link}>
-                    <li>
+                <FadeIn custom={{ delay: 0.3 * index, skewX: -10 }}>
+                  <li>
+                    <a href={item.link}>
                       <img src={item.logo} alt={item.title} />
                       <h4>{item.title}</h4>
-                    </li>
-                  </a>
+                    </a>
+                  </li>
                 </FadeIn>
               )
             })}
           </ul>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* <section className={style.SlideSec}>
         <div className="content">
@@ -83,11 +91,42 @@ const Page = ({}) => {
         </div>
       </section> */}
 
-      <section className={style.venueSec}></section>
+      <section className={style.movieSec}>
+        <div className={style.movieOuter}>
+          <div className={style.movie_titleBox}>
+            <span>
+              <AnimationText text="MOVIE" />
+            </span>
+            <h2>試合動画</h2>
+          </div>
+          <ul className={style.movie_list}>
+            {movies.map((movie, index) => {
+              return (
+                <li key={index}>
+                  <video controls>
+                    <source src={movie} type="video/mp4" />
+                    お使いのブラウザはvideoタグに対応していません。
+                  </video>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <section className={style.venueSec}>
+        <div className={style.venueOuter}>
+          <img src={japan} alt="日本地図" />
+        </div>
+      </section>
 
       <section className={style.instaSec}>
-        <h2>INSRAGRAM</h2>
-        <div id="instafeed"></div>
+        <div className="content">
+          <h2>
+            <AnimationText text="INSTAGRAM" />
+          </h2>
+          <div id="instafeed"></div>
+        </div>
       </section>
       <ButtomContact />
     </Layout>

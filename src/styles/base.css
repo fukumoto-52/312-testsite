@@ -94,8 +94,6 @@ body {
   letter-spacing: 0.1em;
   background: #ffffff;
   margin: 0;
-  font-family: serif;
-  
 }
 
 h1,
@@ -169,9 +167,9 @@ video {
 }
 
 section {
-  margin: 80px 0;
-  @media(max-width:896px){
-     margin: 60px 0;
+  padding: 120px 0;
+  @media (max-width: 896px) {
+    padding: 80px 0;
   }
 }
 p {
@@ -207,4 +205,3 @@ p {
 .bk_color_wrap {
   background-color: var(--color-sub2-theme);
 }
-
