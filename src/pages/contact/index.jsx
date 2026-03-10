@@ -11,18 +11,10 @@ import TopPath from "/src/components/TopPath"
 import kv from "../../images/top/contact.jpg"
 
 const Page = () => {
-  const phoneNumber = "0123456789" 
+  const phoneNumber = "0123456789"
 
-  const contactList = [
-    "商品について", 
-    "サービスについて", 
-    "その他"
-  ] 
-  const contactItem = [
-    "お名前",
-    "メールアドレス",
-    "会社名"
-  ] 
+  const contactList = ["商品について", "サービスについて", "その他"]
+  const contactItem = ["お名前", "メールアドレス", "会社名"]
 
   const {
     register,
@@ -158,8 +150,5 @@ const Page = () => {
 export default Page
 
 export const Head = () => (
-  <Seo
-    title="お問い合わせ"
-    description="お問い合わせページです"
-  />
+  <Seo title="お問い合わせ" description="お問い合わせページです" />
 )

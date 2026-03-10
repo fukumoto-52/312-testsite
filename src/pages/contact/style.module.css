@@ -1,5 +1,6 @@
 .container {
   margin: 30px auto 60px;
+  color: #fff;
 
   @media (min-width: 641px) {
     max-width: 624px;
@@ -152,6 +153,12 @@
 .checkboxarea {
   margin-top: 40px;
   text-align: center;
+  a{
+    color: red;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
 }
 
 .introduction {
@@ -174,8 +181,9 @@
   padding: 16px 0;
   margin: 20px auto 0;
   letter-spacing: 0.1em;
-  border: 1px solid var(--color-dark);
+  border: 1px solid #fff;
   text-align: center;
+ 
 
   @media (min-width: 641px) {
     max-width: 392px;
@@ -192,6 +200,7 @@
     font-size: 22px;
     line-height: 1.181;
     text-align: center;
+    color: #fff;
 
     &:hover {
       @media (min-width: 641px) {

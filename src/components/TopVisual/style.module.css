@@ -1,20 +1,11 @@
 
 .topvisual {
-  height: 800px;
-  margin-top: 120px;
   position: relative;
-  & .tvImgBox {
-    display: flex;
-    height: 100%;
-    & img {
-      height: 100%;
-      width: 50%;
-      object-fit: cover;
-    }
-    & .tvimg02 {
-      filter: grayscale(100%);
-
-    }
+  max-height: 500px;
+  img{
+    aspect-ratio: 2 / 1;
+    max-height: 500px;
+    object-fit: cover;
   }
   & h2 {
     position: absolute;
