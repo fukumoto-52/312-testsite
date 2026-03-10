@@ -51,7 +51,7 @@ const Component = () => {
 
       {/* スマホメニュー */}
       <div
-        className={style.sp_menu}
+        className={`${style.sp_menu} ${isOpen ? style.open : ""}`}
         style={{
           opacity: isOpen ? 1 : 0,
           visibility: isOpen ? "visible" : "hidden",
@@ -60,6 +60,7 @@ const Component = () => {
         }}
       >
         <nav className={style.sp_nav}>
+          <span className={style.border01}></span>
           <ul className={style.sp_nav_list}>
             <li className={style.sp_nav_item}>
               <Link to="/">ホーム</Link>
@@ -73,6 +74,7 @@ const Component = () => {
               <Link to="/contact">お問い合わせ</Link>
             </li>
           </ul>
+          <span className={style.border02}></span>
         </nav>
       </div>
     </header>

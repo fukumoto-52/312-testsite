@@ -205,3 +205,51 @@ p {
 .bk_color_wrap {
   background-color: var(--color-sub2-theme);
 }
+
+.decotitke {
+  margin-bottom: 40px;
+  margin-left: 2vw;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 35%;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+  }
+  &::before {
+    bottom: -5px;
+    left: -8%;
+    background-color: var(--color-sub);
+  }
+  &::after {
+    bottom: 5px;
+    left: -5%;
+    background-color: var(--color-main);
+  }
+
+  span {
+    font-size: clamp(5rem, 7vw, 11rem);
+    line-height: 1;
+    text-stroke: 5px #fff;
+    paint-order: stroke;
+    -webkit-text-stroke: 5px #fff;
+    color: var(--color-dark);
+    font-family: var(--font-en);
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 796px) {
+    &::before {
+      bottom: 0;
+      left: -5%;
+    }
+    &::after {
+      bottom: 5px;
+      left: -3%;
+    }
+  }
+  @media (max-width: 550px) {
+  }
+}

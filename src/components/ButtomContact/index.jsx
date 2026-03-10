@@ -18,10 +18,10 @@ const Component = () => {
           ここに文字が入りますここに文字が入ります
         </p>
         <div className={style.contentflex}>
-          <Link href={`tel:+81 000`}>
+          {/* <Link href={`tel:+81 000`}>
             <div className={style.tel}>Tel:00</div>
-          </Link>
-          <MainButton link="/contact" text="エントリー" />
+          </Link> */}
+          <MainButton link="/contact" text="ENTRY" />
         </div>
       </div>
     </div>

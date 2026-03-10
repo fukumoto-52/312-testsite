@@ -18,7 +18,10 @@ const Component = () => {
             <nav className={style.nav}>
               <ul className={style.nav_list}>
                 <li className={style.nav_item}>
-                  <Link to="/">ホーム</Link>
+                  <Link to="/">HOME</Link>
+                </li>
+                <li className={style.nav_item}>
+                  <Link to="/">TEXT</Link>
                 </li>
               </ul>
             </nav>

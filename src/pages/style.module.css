@@ -1,8 +1,32 @@
 .topSec {
   position: relative;
+  height: 700px;
+  color: #fff;
   & .top_visual {
-    max-width: 1700px;
     margin: 0 auto;
+    video {
+      height: 700px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .toptitle {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+
+    h2 {
+      font-size: clamp(2.4rem, 3vw, 3.6rem);
+      line-height: 1.4;
+      margin-bottom: 40px;
+      .topmore {
+        font-size: clamp(3rem, 3vw, 5.5rem);
+        font-weight: 800;
+        text-shadow: 3px 3px 0 #fff;
+        color: var(--color-main);
+        margin-right: 5px;
+      }
+    }
   }
   .toplogo {
     position: absolute;
@@ -12,10 +36,41 @@
     left: 50%;
     transform: translate(-50%);
     img {
-      max-width: 300px;
       aspect-ratio: 1;
       object-fit: contain;
       background-color: #fff;
+    }
+  }
+}
+@media (max-width: 798px) {
+  .topSec {
+    height: 500px;
+    & .top_visual {
+      video {
+        height: 500px;
+      }
+    }
+    .toplogo {
+      max-width: 200px;
+    }
+  }
+}
+@media (max-width: 690px) {
+  .topSec {
+    height: 650px;
+    & .top_visual {
+      video {
+        height: 650px;
+      }
+    }
+    .toptitle {
+      left: 5%;
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+    .toplogo {
+      max-width: 150px;
     }
   }
 }
@@ -39,45 +94,12 @@
     background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 773.74 154.98"><g fill="%23f6fbfe"><path d="M773.74 154.98H0L386.87 77.5Z"/><path d="M773.74 154.98 386.87 0 0 154.98Z" opacity=".66"/></g></svg>');
   }
 
-  h2 {
-    margin-bottom: 40px;
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      height: 35%;
-      clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
-    }
-    &::before {
-      bottom: 0;
-      left: -15%;
-      background-color: var(--color-sub);
-    }
-    &::after {
-      bottom: 10px;
-      left: -10%;
-      background-color: var(--color-main);
-    }
-
-    span {
-      font-size: clamp(4rem, 10rem, 13rem);
-      line-height: 1;
-      text-stroke: 5px #fff;
-      paint-order: stroke;
-      -webkit-text-stroke: 5px #fff;
-      color: var(--color-dark);
-      font-family: var(--font-en);
-      position: relative;
-      z-index: 1;
-    }
-  }
   .sponsorFlex {
     display: flex;
     justify-content: center;
     align-items: stretch;
     width: 100%;
+    padding: 0 30px;
     li {
       background-color: #fff;
       width: calc(100% / 4);
@@ -151,6 +173,25 @@
     }
   }
 }
+@media (max-width: 796px) {
+  .sponsorSec {
+    .sponsorFlex {
+      flex-wrap: wrap;
+      gap: 5px 0;
+
+      li {
+        width: calc(100% / 2);
+        min-width: 200px;
+        max-width: 250px;
+        a {
+          h4 {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
 
 .movieSec {
   background-color: var(--color-sub);
@@ -197,16 +238,52 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      flex-wrap: wrap;
 
       li {
         background-color: var(--color-dark);
         padding: 5px;
         width: calc(100% / 3 - 20px);
+        min-width: 300px;
       }
     }
   }
 }
-.venueSec {
+@media (max-width: 650px) {
+  .movieSec {
+    &::before {
+      bottom: unset;
+      top: 0;
+      width: 200px;
+      height: 80%;
+    }
+
+    .movieOuter {
+      .movie_list {
+        li {
+          min-width: 350px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 435px) {
+  .movieSec {
+    &::before {
+      height: 50%;
+    }
+
+    .movieOuter {
+      .movie_list {
+        li {
+          min-width: 320px;
+        }
+      }
+    }
+  }
+}
+
+.spotSec {
   position: relative;
   background: url(../images/top/venuebk.jpg) no-repeat center;
   background-size: cover;
@@ -235,7 +312,7 @@
     background-position: 26% 0%;
     background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.8 22.4" preserveAspectRatio="none"><path fill="%23f6fbfe" d="M101 22L94 8 84 18 76 7l-9 9-7-15-10 17-8-16-8 9-9 11-8-20-9 14-8 6V0h101z"/></svg>');
   }
-  .venueOuter {
+  .spotOuter {
     max-width: 1500px;
     margin: 0 auto;
     position: relative;
@@ -256,38 +333,34 @@
     #f6fbfe 50%,
     #f6fbfe 100%
   );
-  h2 {
-    margin-bottom: 40px;
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      height: 35%;
-      clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
-    }
-    &::before {
-      bottom: 0;
-      left: -15%;
-      background-color: var(--color-sub);
-    }
-    &::after {
-      bottom: 10px;
-      left: -10%;
-      background-color: var(--color-main);
-    }
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 30%;
+    aspect-ratio: 2 / 1;
+    background: url(../images/other/ball.png) no-repeat center;
+    background-size: 100%;
+    opacity: 0;
+    transform: rotate(10deg) translateX(30px);
+    transition: opacity 0.4s ease, transform 0.7s ease;
+    transition-delay: 0.5s;
+  }
 
-    span {
-      font-size: clamp(4rem, 10rem, 13rem);
-      line-height: 1;
-      text-stroke: 5px #fff;
-      paint-order: stroke;
-      -webkit-text-stroke: 5px #fff;
-      color: var(--color-dark);
-      font-family: var(--font-en);
-      position: relative;
-      z-index: 1;
+  h2 {
+  }
+}
+.instaSec.show::before {
+  opacity: 0.5;
+  transform: translateX(0) rotate(10deg);
+}
+@media (max-width: 796px) {
+  .instaSec {
+    &::before {
+      width: 40%;
+      aspect-ratio: 2 / 1;
     }
   }
 }

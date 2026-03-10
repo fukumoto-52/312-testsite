@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
+import { Link } from "gatsby"
 import Layout from "/src/components/Layout"
 import * as style from "./style.module.css"
 import { loadInstagramFeed } from "../utils/instafeed"
@@ -6,10 +7,14 @@ import { loadInstagramFeed } from "../utils/instafeed"
 import "../styles/base.css"
 import TopVisual from "/src/components/TopVisual"
 import FadeIn from "/src/components/FadeIn"
+import ZoomOut from "/src/components/ZoomOut"
 import Seo from "/src/components/Seo"
+import MainButton02 from "/src/components/MainButton02"
 import Slideshow from "/src/components/Slideshow"
 import ButtomContact from "/src/components/ButtomContact"
 import AnimationText from "/src/components/AnimationText"
+import SpotMap from "/src/components/SpotMap"
+
 import kv from "/src/images/movie/movie02.mp4"
 import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
@@ -20,7 +25,25 @@ import movie02 from "/src/images/movie/movie02.mp4"
 import movie03 from "/src/images/movie/movie03.mp4"
 
 import japan from "/src/images/other/japan.png"
+
 const Page = ({}) => {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (ref.current) observer.observe(ref.current)
+
+    return () => observer.disconnect()
+  }, [])
   const images = [sample, sample, sample, sample]
 
   const sponsor = [
@@ -56,10 +79,21 @@ const Page = ({}) => {
       <div className={style.topSec}>
         <div className={style.top_visual}>
           {/* <img src={sample} className={style.kv} /> */}
-          <video loop muted autoPlay >
+          <video loop muted autoPlay>
             <source src={kv} type="video/mp4" />
             お使いのブラウザはvideoタグに対応していません。
           </video>
+        </div>
+        <div className={style.toptitle}>
+          <h2>
+            トップタイトル
+            <br />
+            <span className={style.topmore}>ここに文字が</span>入ります
+          </h2>
+          {/* <Link to="/" className={style.eventlink}>
+            イベント情報 
+          </Link> */}
+          <MainButton02 link="/" text="イベント情報" />
         </div>
         <div className={style.toplogo}>
           <img src={logo} alt="ロゴ" />
@@ -68,7 +102,7 @@ const Page = ({}) => {
 
       <section className={style.sponsorSec}>
         <div className="content">
-          <h2>
+          <h2 className="decotitke">
             <AnimationText text="SPONSOR" />
           </h2>
           <ul className={style.sponsorFlex}>
@@ -118,15 +152,24 @@ const Page = ({}) => {
         </div>
       </section>
 
-      <section className={style.venueSec}>
-        <div className={style.venueOuter}>
+
+
+      <section className={style.spotSec}>
+        {/* <div className={style.spotOuter}>
           <img src={japan} alt="日本地図" />
-        </div>
+        </div> */}
+        <SpotMap/>
       </section>
 
-      <section className={style.instaSec}>
+
+
+
+      <section
+        ref={ref}
+        className={`${style.instaSec} ${visible ? style.show : ""}`}
+      >
         <div className="content">
-          <h2>
+          <h2 className="decotitke">
             <AnimationText text="INSTAGRAM" />
           </h2>
           <div id="instafeed"></div>

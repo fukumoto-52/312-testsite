@@ -1,0 +1,46 @@
+.map {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.pin {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  border: 2px solid #333;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+
+.label {
+  font-weight: bold;
+}
+
+
+.popup{
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  h3{
+    color: var(--color-main);
+  }
+}
