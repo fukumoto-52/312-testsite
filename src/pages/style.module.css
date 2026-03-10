@@ -287,6 +287,7 @@
   position: relative;
   background: url(../images/top/venuebk.jpg) no-repeat center;
   background-size: cover;
+    padding: 120px 0 10px;
   &::before {
     position: absolute;
     content: "";
@@ -312,28 +313,34 @@
     background-position: 26% 0%;
     background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.8 22.4" preserveAspectRatio="none"><path fill="%23f6fbfe" d="M101 22L94 8 84 18 76 7l-9 9-7-15-10 17-8-16-8 9-9 11-8-20-9 14-8 6V0h101z"/></svg>');
   }
-  .spotOuter {
-    max-width: 1500px;
-    margin: 0 auto;
+  .spottitle{
     position: relative;
-
-    img {
-      max-width: 800px;
-      display: block;
-      margin: 0 auto;
+    margin: 0 20px;
+    span{
+      color: #dddddd8e;
+      font-size: clamp(5rem , 6vw , 10rem);
+      font-weight: 800;
+      font-family: var(--font-en);
+      line-height: 1;
+    }
+    h2{
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      color: #fff;
     }
   }
 }
 
+
+
+
 .instaSec {
-  background: linear-gradient(
-    45deg,
-    #133779 0%,
-    #133779 50%,
-    #f6fbfe 50%,
-    #f6fbfe 100%
-  );
+  background: linear-gradient(45deg,#133779 0%,#133779 50%,#f6fbfe 50%,#f6fbfe 100%);
+  overflow: hidden;
   position: relative;
+
+
   &::before {
     content: "";
     position: absolute;

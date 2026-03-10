@@ -44,9 +44,6 @@
   font-size: 20px;
 } */
 
-
-
-
 .position {
   text-align: center;
 }
@@ -68,11 +65,10 @@
   height: 100%;
 }
 
-
 .shape {
   stroke-width: 6px;
   fill: transparent;
-  stroke: #009FFD;
+  stroke: #009ffd;
 
   stroke-dasharray: 140 540;
   stroke-dashoffset: -350;
@@ -85,26 +81,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
-font-weight: 800;
+  font-weight: 800;
   color: white;
   font-size: clamp(18px, 2vw, 24px);
   transition: all 0.3s ease-in-out;
-
-  &:hover{
-    text-shadow: 1px 1px 10px #ffffff69 , -1px -1px 10px #ffffff69 ;
-    color: #ffffff;
-  }
 }
 
 .spot {
   position: absolute;
   inset: 0;
-  
 }
 
 .svgWrapper:hover .shape {
   stroke-dasharray: 120 0;
   stroke-width: 5px;
   stroke-dashoffset: 0;
-  stroke: #06D6A0;
+  stroke: #06d6a0;
+}
+.svgWrapper:hover .text {
+  text-shadow: 1px 1px 10px #ffffff69, -1px -1px 10px #ffffff69;
 }

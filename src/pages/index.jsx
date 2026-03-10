@@ -128,41 +128,44 @@ const Page = ({}) => {
           <Slideshow images={images} />
         </div>
       </section> */}
-
       <section className={style.movieSec}>
-        <div className={style.movieOuter}>
-          <div className={style.movie_titleBox}>
-            <span>
-              <AnimationText text="MOVIE" />
-            </span>
-            <h2>試合動画</h2>
+        <FadeIn>
+          <div className={style.movieOuter}>
+            <div className={style.movie_titleBox}>
+              <p>
+                <AnimationText text="MOVIE" />
+              </p>
+              <h2>試合動画</h2>
+            </div>
+            <ul className={style.movie_list}>
+              {movies.map((movie, index) => {
+                return (
+                  <li key={index}>
+                    <video controls>
+                      <source src={movie} type="video/mp4" />
+                      お使いのブラウザはvideoタグに対応していません。
+                    </video>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
-          <ul className={style.movie_list}>
-            {movies.map((movie, index) => {
-              return (
-                <li key={index}>
-                  <video controls>
-                    <source src={movie} type="video/mp4" />
-                    お使いのブラウザはvideoタグに対応していません。
-                  </video>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+        </FadeIn>
       </section>
-
-
 
       <section className={style.spotSec}>
-        {/* <div className={style.spotOuter}>
-          <img src={japan} alt="日本地図" />
-        </div> */}
-        <SpotMap/>
+        <div className="content">
+          <FadeIn custom={{x : -20 , y : 0}}>
+            <div className={style.spottitle}>
+              <span>TOURNAMENT VENUES</span>
+              <h2>開催実績</h2>
+            </div>
+          </FadeIn>
+          <ZoomOut>
+            <SpotMap />
+          </ZoomOut>
+        </div>
       </section>
-
-
-
 
       <section
         ref={ref}

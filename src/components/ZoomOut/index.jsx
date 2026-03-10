@@ -9,8 +9,8 @@ const defaultCustom = {
   scale: 1.2,
   blur: 0,
   once: true,
-  amount: 0.2,
-  duration: 0.8,
+  amount: 0.5,
+  duration: 1,
   delay: 0,
 };
 

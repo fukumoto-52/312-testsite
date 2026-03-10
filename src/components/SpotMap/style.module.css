@@ -1,46 +1,92 @@
-.map {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-
-  img {
+.mapWrap {
+  .map {
+    position: relative;
     width: 100%;
-    height: auto;
-    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pin {
+      position: absolute;
+
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 30px;
+      background: var(--color-main);
+      border: 2px solid#fff;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+
+      .label {
+        font-weight: bold;
+      }
+    }
+  }
+  .sp_list {
+    display: none;
+  }
+
+  @media (max-width: 690px) {
+    .map {
+      display: none;
+    }
+
+    .sp_list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0 10px;
+    }
+
+    .sp_item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      background:#fff ;
+      color: var(--color-main);
+      border-radius: 6px;
+    }
+
+    .sp_title {
+      font-weight: bold;
+    }
+
+    .sp_date {
+      font-size: 12px;
+      opacity: 0.8;
+    }
   }
 }
 
-.pin {
-  position: absolute;
-
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 30px;
-  border: 2px solid #333;
-  background: white;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-
-
-.label {
-  font-weight: bold;
-}
-
-
-.popup{
-  background-color: #fff;
+.popup {
+  background-color: #ffffffbd;
+  backdrop-filter: blur(4px);
   position: relative;
   z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  padding: 20px;
+  margin: 10px 10px 0;
 
-  h3{
+  h3 {
     color: var(--color-main);
   }
+}
+.popup.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+.fade {
+  opacity: 0;
+  transform: translateX(20px);
 }
