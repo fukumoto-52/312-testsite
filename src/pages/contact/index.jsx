@@ -13,8 +13,8 @@ import kv from "../../images/top/contact.jpg"
 const Page = () => {
   const phoneNumber = "0123456789"
 
-  const contactList = ["商品について", "サービスについて", "その他"]
-  const contactItem = ["お名前", "メールアドレス", "会社名"]
+  const contactList = ["大会について", "その他"]
+  const contactItem = ["代表者", "メールアドレス", "チーム名"]
 
   const {
     register,
@@ -32,13 +32,13 @@ const Page = () => {
 
   return (
     <Layout>
-      <TopVisual entitle="CONTACT" title="お問い合わせ" kv={kv} />
-      <TopPath pageTitle="お問い合わせ" />
+      <TopVisual entitle="CONTACT" title="エントリー" kv={kv} />
+      <TopPath pageTitle="エントリー" />
       <div className={style.container}>
         <div className={"content"}>
           <div className={style.introduction}>
             <p>
-              弊社へのお問い合わせは、お電話、もしくは下記のフォームから送信してください。
+              大会へのご応募は、お電話、または下記のフォームよりお申し込みください。
             </p>
           </div>
           <div className={style.tel}>
@@ -98,7 +98,7 @@ const Page = () => {
             <div className={style.inputarea}>
               <label htmlFor="inquiryDetails">
                 <span>*</span>
-                お問い合わせ内容
+                その他備考
               </label>
               <textarea
                 id="inquiryDetails"
@@ -150,5 +150,5 @@ const Page = () => {
 export default Page
 
 export const Head = () => (
-  <Seo title="お問い合わせ" description="お問い合わせページです" />
+  <Seo title="エントリー" description="エントリーページです" />
 )

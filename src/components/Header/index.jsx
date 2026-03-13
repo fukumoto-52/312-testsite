@@ -66,7 +66,7 @@ const Component = () => {
               <Link to="/">ホーム</Link>
             </li>
             <li className={style.sp_nav_item}>
-              <Link to="/contact">お問い合わせ</Link>
+              <Link to="/contact">エントリー</Link>
             </li>
           </ul>
           <span className={style.border02}></span>
