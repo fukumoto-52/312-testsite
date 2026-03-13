@@ -1,5 +1,8 @@
-.main{
-    overflow: hidden;
-    background-image: radial-gradient(#2655AF , #0D0D0D);
-    padding-top: 70px;
+.main {
+  overflow: hidden;
+  background-image: radial-gradient(#2655af, #0d0d0d);
+  padding-top: 100px;
+  @media (max-width: 600px) {
+    padding-top: 50px;
+  }
 }
