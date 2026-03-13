@@ -1,11 +1,13 @@
 .topSec {
   position: relative;
   height: 700px;
+  max-height: 80vh;
   color: #fff;
   & .top_visual {
     margin: 0 auto;
     video {
       height: 700px;
+      max-height: 80vh;
       width: 100%;
       object-fit: cover;
     }
@@ -44,23 +46,24 @@
 }
 @media (max-width: 798px) {
   .topSec {
-    height: 500px;
+    height: 550px;
     & .top_visual {
       video {
-        height: 500px;
+        height: 550px;
       }
     }
     .toplogo {
-      max-width: 200px;
+      max-width: 250px;
+      bottom: -100px;
     }
   }
 }
 @media (max-width: 690px) {
   .topSec {
-    height: 650px;
+    height: 550px;
     & .top_visual {
       video {
-        height: 650px;
+        height: 550px;
       }
     }
     .toptitle {
@@ -70,7 +73,7 @@
       }
     }
     .toplogo {
-      max-width: 150px;
+      max-width: 200px;
     }
   }
 }

@@ -2,18 +2,18 @@
   width: 100%;
   text-align: center;
   padding: 60px 0 16px;
-  color:#fff;
+  color: #fff;
   position: relative;
-  background-color:#133779;
-  background-color:#999999;
+  background-color: #133779;
+  background-color: #999999;
   background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
 
   & .footerTop {
     margin-bottom: 20px;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: end;
-    gap: 60px;
+    gap: 60px; */
 
     & .footer_logo {
       display: block;
@@ -22,70 +22,76 @@
       }
     }
 
-    & .nav{
-      & .nav_list{
+    & .nav {
+      & .nav_list {
         display: flex;
         justify-content: center;
         gap: 10px;
-        
-        & .nav_item{
+
+        & .nav_item {
           text-align: left;
-          
-          & a{
+
+          & a {
             font-family: var(--font-en);
-            color:#fff;
+            color: #fff;
             font-weight: 400;
             font-size: 24px;
 
-            &:hover{
+            &:hover {
               color: var(--color-main);
               opacity: 0.9;
             }
           }
         }
 
-        & .headercontact{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color:#fff;
+        & .headercontact {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #fff;
         }
       }
     }
   }
-  @media(max-width:500px){
+  @media (max-width: 500px) {
     & .footerTop {
-      flex-direction: column;
+      /* flex-direction: column;
       gap: 40px;
-      align-items: center;
+      align-items: center; */
       margin-bottom: 60px;
+      & .footer_logo {
+        display: block;
+        & img {
+          width: 100px;
+        }
+      }
     }
   }
 }
 
-.companySec{
+.companySec {
   margin: 40px 0;
 
-  & .accessBoxOuter{
+  & .accessBoxOuter {
     padding: 0 20px;
     display: flex;
     gap: 40px;
     justify-content: center;
     align-items: center;
 
-    & .accessBox{
+    & .accessBox {
       background-color: #ffffff61;
       backdrop-filter: blur(5px);
       padding: 20px 40px;
 
-      & .textBox{
-        & .titleFlex{
+      & .textBox {
+        & .titleFlex {
           display: flex;
           justify-content: flex-start;
           align-items: center;
           gap: 60px;
 
-          & h4{
+          & h4 {
             width: 100%;
             color: #fff;
             text-align: left;
@@ -95,41 +101,40 @@
             box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
           }
 
-          & a{
-            & img{
+          & a {
+            & img {
               width: 35px;
               height: 35px;
               object-fit: contain;
             }
-            &:hover{
+            &:hover {
               opacity: 0.6;
-
             }
           }
         }
-        & .accessTextBox{
+        & .accessTextBox {
           margin: 10px 10px 0px;
           color: var(--color-light);
           font-weight: 300;
 
-          & dl{
+          & dl {
             display: flex;
             margin-bottom: 10px;
             border-bottom: 1px solid var(--color-main);
 
-            & dt{
+            & dt {
               text-align: center;
               min-width: 100px;
             }
 
-            & dd{
+            & dd {
               text-align: left;
 
-              & a{
+              & a {
                 color: var(--color-light);
                 font-weight: 600;
 
-                &:hover{
+                &:hover {
                   color: var(--color-main);
                 }
               }
@@ -139,11 +144,11 @@
       }
     }
   }
-  @media(max-width:840px){
-    & .accessBoxOuter{
+  @media (max-width: 840px) {
+    & .accessBoxOuter {
       flex-direction: column;
 
-      & .accessBox{
+      & .accessBox {
         padding: 20px;
       }
     }
@@ -155,7 +160,7 @@
   font-size: 12px;
   line-height: 2.5;
   letter-spacing: 0.15em;
-  color:#fff;
+  color: #fff;
 
   &:hover {
     @media (min-width: 1081px) {
