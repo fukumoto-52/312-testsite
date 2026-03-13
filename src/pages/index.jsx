@@ -16,7 +16,7 @@ import AnimationText from "/src/components/AnimationText"
 import SpotMap from "/src/components/SpotMap"
 
 import kv from "/src/images/movie/movie02.mp4"
-import thumbnail from "/src/images/top/sample.jpg"
+import thumbnail from "/src/images/top/thumbnail.jpg"
 import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
 
