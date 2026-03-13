@@ -66,11 +66,6 @@ const Component = () => {
               <Link to="/">ホーム</Link>
             </li>
             <li className={style.sp_nav_item}>
-              <a href="/" target="_blank">
-                公式サイト
-              </a>
-            </li>
-            <li className={style.sp_nav_item}>
               <Link to="/contact">お問い合わせ</Link>
             </li>
           </ul>
