@@ -16,6 +16,7 @@ import AnimationText from "/src/components/AnimationText"
 import SpotMap from "/src/components/SpotMap"
 
 import kv from "/src/images/movie/movie02.mp4"
+import thumbnail from "/src/images/top/sample.jpg"
 import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
 
@@ -79,7 +80,7 @@ const Page = ({}) => {
       <div className={style.topSec}>
         <div className={style.top_visual}>
           {/* <img src={sample} className={style.kv} /> */}
-          <video loop muted autoPlay>
+          <video loop muted autoPlay poster={thumbnail}>
             <source src={kv} type="video/mp4" />
             お使いのブラウザはvideoタグに対応していません。
           </video>
