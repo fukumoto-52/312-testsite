@@ -21,7 +21,7 @@ const Component = () => {
                   <Link to="/">HOME</Link>
                 </li>
                 <li className={style.nav_item}>
-                  <Link to="/">ENTRY</Link>
+                  <Link to="/contact">ENTRY</Link>
                 </li>
               </ul>
             </nav>
