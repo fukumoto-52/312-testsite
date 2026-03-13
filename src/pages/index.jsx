@@ -19,7 +19,7 @@ import kv from "/src/images/movie/movie02.mp4"
 import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
 
-import sponsor01 from "/src/images/icon/logo.png"
+import sponsor01 from "/src/images/icon/sponsor.png"
 import movie01 from "/src/images/movie/movie01.mp4"
 import movie02 from "/src/images/movie/movie02.mp4"
 import movie03 from "/src/images/movie/movie03.mp4"
