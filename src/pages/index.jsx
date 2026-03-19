@@ -65,7 +65,7 @@ const Page = ({}) => {
     },
     {
       logo: sponsor01,
-      title: "スポンサー名",
+      title: "スポンサー名4",
       link: "/",
     },
   ]
