@@ -1,7 +1,7 @@
 .main {
   overflow: hidden;
   background-image: radial-gradient(#2655af, #0d0d0d);
-  padding-top: 100px;
+  padding-top: 80px;
   @media (max-width: 600px) {
     padding-top: 50px;
   }

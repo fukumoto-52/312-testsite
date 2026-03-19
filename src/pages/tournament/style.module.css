@@ -1,0 +1,165 @@
+
+
+/*タイトル共通デザイン */
+.titleFlex{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cccccc75;
+
+  .border{
+    height: 2px ;
+    width: 100px;
+    margin-top: 30px;
+    background-color: #ccc;
+  }
+  .titleBox{
+    color:#fff;
+    .en{
+      font-size: 14px;
+      font-family: serif;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    h2{
+      line-height: 1;
+
+    }
+  }
+}
+
+.scheduleSec {
+  .accordionOuter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .accordion_item {
+      width: calc(100% / 2 - 20px);
+      min-width: 400px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      background: transparent; /* タイトル部分の背景は透明 */
+
+      .title {
+        padding: 15px;
+        font-weight: bold;
+        text-align: center;
+        background: #ccc;
+      }
+
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        opacity: 0;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        background: transparent;
+      }
+    }
+    .active .content {
+      max-height: 500px;
+      padding: 10px;
+      opacity: 1;
+      background: #f0f0f07f;
+    }
+  }
+}
+
+
+.resultSec{
+  position: relative;
+  /* &::before {
+    content: "";
+    font-family: "shape divider from ShapeDividers.com";
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw;
+    background-size: 223% 104px;
+    background-position: 50% 100%;
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 773.74 154.98"><g fill="%23f6fbfe"><path d="M773.74 154.98H0L386.87 77.5Z"/><path d="M773.74 154.98 386.87 0 0 154.98Z" opacity=".66"/></g></svg>');
+  } */
+  .resultText{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  /* ポップアップデザイン */
+  .resultPdfFlex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      &:hover{
+        opacity:0.6;
+      }
+    }
+
+    .modalOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+
+      .modalContent {
+        background-color: #e5e5e5;
+        background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+        padding: 20px;
+        border-radius: 6px;
+        width: 90%;
+        max-width: 500px;
+
+        .title {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .details {
+          margin-bottom: 10px;
+        }
+
+        .pdfLink {
+          display: block;
+          margin-bottom: 10px;
+          color: #007bff;
+
+        }
+
+        .closeButton {
+          padding: 6px 12px;
+          background-color: #b9b9b9;
+          border: none;
+          display: block;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

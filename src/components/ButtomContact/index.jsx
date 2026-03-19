@@ -9,9 +9,9 @@ const Component = () => {
     <div className={style.topcontact}>
       <div className={style.topcontact_outer}>
         <span className={style.heading}>
-          <AnimationText text="ENTRY" />
+          <AnimationText text="COATACT" />
         </span>
-        <h3>エントリーはこちらから</h3>
+        <h3>お問い合わせはこちらから</h3>
         <p>
           ここに文字が入りますここに文字が入りますここに文字が入ります
           <br />
@@ -21,7 +21,7 @@ const Component = () => {
           {/* <Link href={`tel:+81 000`}>
             <div className={style.tel}>Tel:00</div>
           </Link> */}
-          <MainButton link="/contact" text="ENTRY" />
+          <MainButton link="/contact" text="COATACT" />
         </div>
       </div>
     </div>

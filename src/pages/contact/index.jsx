@@ -32,8 +32,8 @@ const Page = () => {
 
   return (
     <Layout>
-      <TopVisual entitle="CONTACT" title="エントリー" kv={kv} />
-      <TopPath pageTitle="エントリー" />
+      <TopVisual entitle="CONTACT" title="お問い合わせ" kv={kv} />
+      <TopPath pageTitle="お問い合わせ" />
       <div className={style.container}>
         <div className={"content"}>
           <div className={style.introduction}>
@@ -98,7 +98,10 @@ const Page = () => {
             <div className={style.inputarea}>
               <label htmlFor="inquiryDetails">
                 <span>*</span>
-                その他備考
+                その他備考<br />
+                <span >
+                ※エントリーしたい大会名を必ず備考に記載ください
+                </span>
               </label>
               <textarea
                 id="inquiryDetails"
@@ -150,5 +153,5 @@ const Page = () => {
 export default Page
 
 export const Head = () => (
-  <Seo title="エントリー" description="エントリーページです" />
+  <Seo title="お問い合わせ" description="お問い合わせページです" />
 )

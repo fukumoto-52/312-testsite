@@ -108,6 +108,7 @@
           & span {
             color: var(--color-error);
           }
+          
         }
 
         & input[type="text"],

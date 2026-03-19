@@ -37,16 +37,20 @@ const Component = () => {
             <img src={logo} alt="Roots" />
           </Link>
         </h1>
-
-        {/* 二本線ボタン */}
-        <button
-          className={`${style.hamburger} ${isOpen ? style.open : ""}`}
-          onClick={toggleMenu}
-          aria-label="メニューを開閉"
-        >
-          <span></span>
-          <span></span>
-        </button>
+        <div className={style.linkBox}>
+        <Link to="/tournament" className={style.headerinfo}>
+            大会情報
+            </Link>
+          {/* 二本線ボタン */}
+          <button
+            className={`${style.hamburger} ${isOpen ? style.open : ""}`}
+            onClick={toggleMenu}
+            aria-label="メニューを開閉"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       {/* スマホメニュー */}
@@ -66,7 +70,7 @@ const Component = () => {
               <Link to="/">ホーム</Link>
             </li>
             <li className={style.sp_nav_item}>
-              <Link to="/contact">エントリー</Link>
+              <Link to="/contact">お問い合わせ</Link>
             </li>
           </ul>
           <span className={style.border02}></span>

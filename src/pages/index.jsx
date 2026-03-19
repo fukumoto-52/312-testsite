@@ -50,17 +50,17 @@ const Page = ({}) => {
   const sponsor = [
     {
       logo: sponsor01,
-      title: "スポンサー名",
+      title: "スポンサー名1",
       link: "/",
     },
     {
       logo: sponsor01,
-      title: "スポンサー名",
+      title: "スポンサー名2",
       link: "/",
     },
     {
       logo: sponsor01,
-      title: "スポンサー名",
+      title: "スポンサー名3",
       link: "/",
     },
     {
@@ -159,7 +159,7 @@ const Page = ({}) => {
           <FadeIn custom={{x : -20 , y : 0}}>
             <div className={style.spottitle}>
               <span>TOURNAMENT VENUES</span>
-              <h2>開催実績</h2>
+              <h2>大会情報</h2>
             </div>
           </FadeIn>
           <ZoomOut>
