@@ -50,7 +50,7 @@ const Page = ({}) => {
   const sponsor = [
     {
       logo: sponsor01,
-      title: "スポンサー名1",
+      title: "スポンサー名",
       link: "/",
     },
     {
