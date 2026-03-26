@@ -1,37 +1,54 @@
 import React, { useState } from "react"
+import { useEffect } from "react"
+import { useLocation } from "@reach/router"
 import * as style from "./style.module.css"
+import { Link } from "gatsby"
 import Layout from "/src/components/Layout"
 import Seo from "/src/components/Seo"
+
 import TopPath from "/src/components/TopPath"
 import TopVisual from "/src/components/TopVisual"
 import Sponsor from "/src/components/Sponsor"
 
 import sample from "/src/images/top/sample.jpg"
 import kv from "../../images/tournament/kv.jpg"
+import { schedule } from "../../date/scheduleData"
 
 const Tournament = () => {
   const [activeIndex, setActiveIndex] = useState(null)
   const toggle = index => {
-    // 同じアイテムをクリックしたら閉じる、違うアイテムなら開く
     setActiveIndex(index === activeIndex ? null : index)
   }
-  const Accordion = [
-    { title: "日程1", content: "内容1です" },
-    { title: "日程2", content: "内容2です" },
-    { title: "日程3", content: "内容3です" },
-  ]
+  const location = useLocation() // 現在のURL
 
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "")
+      const index = schedule.findIndex(item => item.id === id)
+      if (index !== -1) {
+        // アコーディオンを開く
+        setActiveIndex(index)
+
+        // スクロール
+        const section = document.querySelector(`.${style.scheduleSec}`)
+        if (section) {
+          const top = section.getBoundingClientRect().top + window.pageYOffset
+          window.scrollTo({ top, behavior: "smooth" })
+        }
+      }
+    }
+  }, [location.hash])
   const [openIndex, setOpenIndex] = useState(null)
 
   const result = [
     {
-      title: "大会A",
-      details: "大会Aの詳細内容がここに入ります。",
+      title: "岐阜大会結果",
+      details: "岐阜大会結果の詳細内容がここに入ります。",
       pdfUrl: sample,
     },
     {
-      title: "大会B",
-      details: "大会Bの詳細内容がここに入ります。",
+      title: "埼玉大会結果",
+      details: "埼玉大会結果の詳細内容がここに入ります。",
       pdfUrl: sample,
     },
   ]
@@ -50,9 +67,10 @@ const Tournament = () => {
             </div>
           </div>
           <div className={style.accordionOuter}>
-            {Accordion.map((item, index) => (
+            {schedule.map((item, index) => (
               <div
                 key={index}
+                id={item.id}
                 className={`${style.accordion_item} ${
                   activeIndex === index ? style.active : ""
                 }`}
@@ -63,12 +81,22 @@ const Tournament = () => {
                 </div>
 
                 {/* 内容は active なら開く */}
-                <div className={style.content}>{item.content}</div>
+                <div className={style.activeInner}>
+                  <h3>{item.event}</h3>
+                  <div className={style.address}>
+                    <h4>住所</h4>
+                    <p dangerouslySetInnerHTML={{ __html: item.address }}></p>
+                  </div>
+                  <div className={style.contastBtnBox}>
+                    <Link to="/contact">応募はこちら</Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
       <section className={style.resultSec}>
         <div className="content">
           <div className={style.titleFlex}>
@@ -127,7 +155,7 @@ const Tournament = () => {
         </div>
       </section>
 
-      <Sponsor/>
+      <Sponsor />
     </Layout>
   )
 }

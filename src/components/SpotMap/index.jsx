@@ -4,6 +4,7 @@ import { useState } from "react"
 import * as style from "./style.module.css"
 import "../../styles/base.css"
 import japan from "/src/images/other/japan.png"
+import { schedule } from "../../date/scheduleData"
 
 const spots = [
   {
@@ -53,48 +54,58 @@ const Spotmap = () => {
       setOpen(true)
     }, 300)
   }
+
   return (
-    <div className={style.mapWrap}>
-      <div className={style.map}>
-        <img src={japan} alt="" />
+    <div className="content">
+      <div className={style.mapWrap}>
+        <ul className={style.schedule}>
+          {schedule.map(item => (
+            <li key={item.id}>
+              <a href={`/tournament#${item.id}`}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
 
-        {spots.map(spot => (
-          <button
-            key={spot.id}
-            className={style.pin}
-            style={{
-              top: spot.top,
-              left: spot.left,
-            }}
-            onClick={() => changeSpot(spot)}
-          >
-            <span className={style.label}>{spot.title}</span>
-          </button>
-        ))}
-      </div>
-      <div className={style.sp_list}>
-        <img src={japan} alt="" />
-        {spots.map(spot => (
-          <button
-            key={spot.id}
-            className={style.sp_item}
-            onClick={() => changeSpot(spot)}
-          >
-            <span className={style.sp_title}>{spot.title}</span>
-            <span className={style.sp_date}>{spot.date}</span>
-          </button>
-        ))}
-      </div>
-      <div className={`${style.popup} ${open ? style.open : ""}`}>
-        {active && (
-          <>
-            <h3>{active.title}</h3>
-            <p>{active.text}</p>
-            <p>{active.date}</p>
+        <div className={style.map}>
+          <img src={japan} alt="" />
+          {spots.map(spot => (
+            <button
+              key={spot.id}
+              className={style.pin}
+              style={{
+                top: spot.top,
+                left: spot.left,
+              }}
+              onClick={() => changeSpot(spot)}
+            >
+              <span className={style.label}>{spot.title}</span>
+            </button>
+          ))}
+        </div>
+        <div className={style.sp_list}>
+          <img src={japan} alt="" />
+          {spots.map(spot => (
+            <button
+              key={spot.id}
+              className={style.sp_item}
+              onClick={() => changeSpot(spot)}
+            >
+              <span className={style.sp_title}>{spot.title}</span>
+              <span className={style.sp_date}>{spot.date}</span>
+            </button>
+          ))}
+        </div>
+        <div className={`${style.popup} ${open ? style.open : ""}`}>
+          {active && (
+            <>
+              <h3>{active.title}</h3>
+              <p>{active.text}</p>
+              <p>{active.date}</p>
 
-            <button onClick={() => setOpen(false)}>閉じる</button>
-          </>
-        )}
+              <button onClick={() => setOpen(false)}>閉じる</button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )

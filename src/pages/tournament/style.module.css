@@ -1,7 +1,7 @@
-
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 /*タイトル共通デザイン */
-.titleFlex{
+.titleFlex {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -9,24 +9,23 @@
   padding-bottom: 30px;
   border-bottom: 1px solid #cccccc75;
 
-  .border{
-    height: 2px ;
+  .border {
+    height: 2px;
     width: 100px;
     margin-top: 30px;
     background-color: #ccc;
   }
-  .titleBox{
-    color:#fff;
-    .en{
+  .titleBox {
+    color: #fff;
+    .en {
       font-size: 14px;
       font-family: serif;
       line-height: 1;
       font-weight: 900;
     }
 
-    h2{
+    h2 {
       line-height: 1;
-
     }
   }
 }
@@ -37,8 +36,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    flex-direction: column;
 
     .accordion_item {
+      margin: 0 auto;
       width: calc(100% / 2 - 20px);
       min-width: 400px;
       cursor: pointer;
@@ -54,26 +55,79 @@
         background: #ccc;
       }
 
-      .content {
+      .activeInner {
         max-height: 0;
         overflow: hidden;
-        padding: 0 10px;
         opacity: 0;
         transition: max-height 0.4s ease, padding 0.4s ease;
         background: transparent;
+        h3 {
+          text-align: center;
+          position: relative;
+          margin: 10px 0;
+          &:before,
+          &:after {
+            position: relative;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            display: inline-block;
+            font-size: 1em;
+            color: var(--color-main);
+          }
+          &:before {
+            content: "\f053";
+            padding-right: 0.5em;
+          }
+          &:after {
+            content: "\f054";
+            padding-left: 0.5em;
+          }
+        }
+        .address {
+          display: flex;
+          width: 100%;
+          margin-bottom: 20px;
+          justify-content: center;
+          h4 {
+            background-color: var(--color-main);
+            text-align: center;
+            padding: 0 20px;
+            color: #fff;
+          }
+          p {
+            background-color: #fff;
+            padding: 0 10px;
+            width: 80%;
+          }
+        }
+        .contastBtnBox {
+          a {
+            width: fit-content;
+            display: block;
+            margin-left: auto;
+            background-color: var(--color-sub);
+            padding: 0 20px 0 50px;
+            font-weight: 600;
+            clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+            &:hover {
+              clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+              padding: 0 20px;
+              opacity: 0.6;
+            }
+          }
+        }
       }
     }
-    .active .content {
+    .active .activeInner {
       max-height: 500px;
-      padding: 10px;
+
       opacity: 1;
       background: #f0f0f07f;
     }
   }
 }
 
-
-.resultSec{
+.resultSec {
   position: relative;
   /* &::before {
     content: "";
@@ -90,7 +144,7 @@
     background-position: 50% 100%;
     background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 773.74 154.98"><g fill="%23f6fbfe"><path d="M773.74 154.98H0L386.87 77.5Z"/><path d="M773.74 154.98 386.87 0 0 154.98Z" opacity=".66"/></g></svg>');
   } */
-  .resultText{
+  .resultText {
     text-align: center;
     margin-bottom: 40px;
     color: #fff;
@@ -99,17 +153,21 @@
   .resultPdfFlex {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 15px;
     flex-wrap: wrap;
 
     .button {
-      padding: 8px 16px;
+      padding: 8px 50px;
       background-color: #007bff;
       color: #fff;
       border: none;
       cursor: pointer;
-      &:hover{
-        opacity:0.6;
+      font-size: 16px;
+      max-width: 400px;
+      margin: 0 auto;
+      &:hover {
+        opacity: 0.6;
       }
     }
 
@@ -119,7 +177,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -147,7 +205,6 @@
           display: block;
           margin-bottom: 10px;
           color: #007bff;
-
         }
 
         .closeButton {

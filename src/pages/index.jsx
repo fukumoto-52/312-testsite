@@ -21,6 +21,7 @@ import logo from "/src/images/icon/logo.png"
 import sample from "/src/images/top/sample.jpg"
 
 import sponsor01 from "/src/images/icon/sponsor.png"
+import movie from "/src/images/movie/movie01.mp4"
 import movie01 from "/src/images/movie/movie01.mp4"
 import movie02 from "/src/images/movie/movie02.mp4"
 import movie03 from "/src/images/movie/movie03.mp4"
@@ -50,7 +51,7 @@ const Page = ({}) => {
   const sponsor = [
     {
       logo: sponsor01,
-      title: "スポンサー名",
+      title: "スポンサー名1",
       link: "/",
     },
     {
@@ -85,17 +86,14 @@ const Page = ({}) => {
             お使いのブラウザはvideoタグに対応していません。
           </video>
         </div>
-        <div className={style.toptitle}>
+        {/* <div className={style.toptitle}>
           <h2>
             トップタイトル
             <br />
             <span className={style.topmore}>ここに文字が</span>入ります
           </h2>
-          {/* <Link to="/" className={style.eventlink}>
-            イベント情報 
-          </Link> */}
           <MainButton02 link="/" text="イベント情報" />
-        </div>
+        </div> */}
         <div className={style.toplogo}>
           <img src={logo} alt="ロゴ" />
         </div>
@@ -138,7 +136,7 @@ const Page = ({}) => {
               </p>
               <h2>試合動画</h2>
             </div>
-            <ul className={style.movie_list}>
+            {/* <ul className={style.movie_list}>
               {movies.map((movie, index) => {
                 return (
                   <li key={index}>
@@ -149,23 +147,32 @@ const Page = ({}) => {
                   </li>
                 )
               })}
-            </ul>
+            </ul> */}
+            <div className={style.movie_Box}>
+              <video controls>
+                <source src={movie} type="video/mp4" />
+                お使いのブラウザはvideoタグに対応していません。
+              </video>
+            </div>
+            <div className={style.BtnBox}>
+              <MainButton02 link="/" text="YouTube"/>
+            </div>
           </div>
         </FadeIn>
       </section>
 
       <section className={style.spotSec}>
         <div className="content">
-          <FadeIn custom={{x : -20 , y : 0}}>
+          <FadeIn custom={{ x: -20, y: 0 }}>
             <div className={style.spottitle}>
               <span>TOURNAMENT VENUES</span>
               <h2>大会情報</h2>
             </div>
           </FadeIn>
-          <ZoomOut>
-            <SpotMap />
-          </ZoomOut>
         </div>
+        <ZoomOut>
+          <SpotMap />
+        </ZoomOut>
       </section>
 
       <section
